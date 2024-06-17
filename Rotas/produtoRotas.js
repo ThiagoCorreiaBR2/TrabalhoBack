@@ -14,36 +14,36 @@ const mongoose = require('mongoose');
  *      properties:
  *        id:
  *          type: number
- *          description: ID do produto
+ *          description: ID do produto determinado
  *        nome:
  *          type: string
- *          description: Nome do produto
+ *          description: Nome do produto determinado
  *        desc:
  *          type: string
- *          description: Descricão do produto
+ *          description: Descricão do produto determinado
  *        cor:
  *          type: string
- *          description: Cor do produto
+ *          description: Cor do produto determinado
  *        peso:
  *          type: number
- *          description: Peso do produto
+ *          description: Peso do produto determinado
  *        tipo:
  *          type: string
- *          description: Tipo do produto
+ *          description: Tipo do produto determinado
  *        preco:
  *          type: number
- *          description: preco do produto
+ *          description: preco do produto determinado
  *        Data:
  *          type: number
- *          description: Data de cadastro do produto
+ *          description: Data de cadastro do produto determinado
  *      example:
  *        id: 1
- *        nome: Computador
- *        desc: Computador HP
- *        cor: Branco
- *        peso: 2
- *        tipo: Computador
- *        preco: 1000
+ *        nome: Televisão
+ *        desc: TV Samsung Smart
+ *        cor: Preta
+ *        peso: 5,60 Kgs
+ *        tipo: Eletrodoméstico
+ *        preco: 5000
  *        Data: 2022
  *
  */
@@ -52,7 +52,7 @@ const mongoose = require('mongoose');
 * @swagger
 * /post:
 *  post:
-*    summary: Cria um novo produto
+*    summary: Cria um novo produto com os dados informados
 *    tags: [Produtos]
 *    requestBody:
 *      required: true
@@ -62,7 +62,7 @@ const mongoose = require('mongoose');
 *            $ref: '#/components/schemas/Produtos'
 *    responses:
 *      201:
-*        description: Cria um novo produto
+*        description: Cria um novo produto com os dados informados
 *        content:
 *          application/json:
 *            schema:
@@ -75,11 +75,11 @@ const mongoose = require('mongoose');
   * @swagger
   * /get:
   *  get:
-  *    summary: Retorna todos os produtos
+  *    summary: Retorna todos os produtos cadastrados
   *    tags: [Produtos]
   *    responses:
   *      200:
-  *        description: Retorna todos os produtos
+  *        description: Retorna todos os produtos cadastrados
   *        content:
   *          application/json:
   *            schema:
@@ -94,7 +94,7 @@ const mongoose = require('mongoose');
   * @swagger
   * /get/{id}:
   *  get:
-  *    summary: Retorna um produto pelo ID
+  *    summary: Retorna um produto específico pelo ID
   *    tags: [Produtos]
   *    parameters:
   *      - in: path
@@ -119,7 +119,7 @@ const mongoose = require('mongoose');
   *   @swagger
   * /buscarNome/{nome}:
   *  get:
-  *    summary: Retorna um produto pelo nome
+  *    summary: Retorna um produto baseado no nome
   *    tags: [Produtos]
   *    parameters:
   *      - in: path
@@ -130,7 +130,7 @@ const mongoose = require('mongoose');
   *        description: Nome do produto
   *    responses:
   *      200:
-  *        description: Retorna um produto pelo nome
+  *        description: Retorna um produto baseado no nome
   *        content: 
   *          application/json:
   *            schema:
@@ -161,7 +161,7 @@ const mongoose = require('mongoose');
  *            $ref: '#/components/schemas/Produtos'
  *    responses:
  *      200:
- *        description: Atualiza um produto pelo ID
+ *        description: Atualiza um produto baseado no ID
  *        content:
  *          application/json:
  *            schema:
@@ -176,7 +176,7 @@ const mongoose = require('mongoose');
  * @swagger
  * /delete/{id}:
  *  delete:
- *    summary: Deleta um produto pelo ID
+ *    summary: Deleta um produto baseado no ID
  *    tags: [Produtos]
  *    parameters:
  *      - in: path
