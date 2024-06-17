@@ -214,7 +214,7 @@ function checkProducts(req, res, next) {
       typeof peso !== 'number' ||
       typeof cor !== 'string' ||
       typeof preco !== 'number' ||
-      typeof Data !== 'date'
+      typeof Data !== 'number'
       /*nome: String ,
     desc: String,
     tipo: String ,
@@ -241,7 +241,7 @@ function checkProductsPut(req, res, next) {
       typeof peso !== 'number' ||
       typeof tipo !== 'string' ||
       typeof preco !== 'number' ||
-      typeof Data !== 'date'
+      typeof Data !== 'number'
     ) {
       res.status(400).json({ message: 'Os campos devem ter o tipo correto' });
       return;
