@@ -33,7 +33,7 @@ const options={
         },
         servers: [
             {
-                url: 'http://localhost:3000',
+                url: 'https://trabalho-back.vercel.app/api-docs',
             },
         ],
     },
